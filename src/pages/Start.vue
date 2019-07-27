@@ -40,6 +40,7 @@
         </nav>
       </div>
     </section>
+
     <section class="section-2">
       <div class="center">
         <div class="left"><img src="../assets/img/cards-block.png" alt=""></div>
@@ -57,6 +58,7 @@
         </div>
       </div>
     </section>
+
     <section class="section-3">
       <div class="center">
         <h1>Статистика</h1>
@@ -149,6 +151,61 @@
         </div>
 
 
+    </section>
+
+    <section class="section-6">
+      <div class="center">
+        <h1>Реальные <span>соперники</span>,<br>честная борьба!</h1>
+        <div class="bonus">
+          <img src="../assets/img/ach-3.png" v-tooltip.bottom="'Третье место в общем рейтинге<br> +50 000 Coins'" alt="">
+          <img src="../assets/img/ach-2.png" v-tooltip.bottom="'Второе место в общем рейтинге<br> +200 Exp'" alt="">
+          <img src="../assets/img/ach-1.png" v-tooltip.bottom="'Первое место в общем рейтинге<br> +500 Pucks'" alt="">
+
+        </div>
+        <div class="arrow">
+          <img src="../assets/img/arrow-2.png" alt="">
+        </div>
+
+        <h2>Регистрируйся, участвуй,<br>получай достижения и боунсы</h2>
+      </div>
+    </section>
+
+    <section class="section-8">
+      <div class="center">
+        <div class="logo"><i class="fas fa-gifts"></i></div>
+        <h1>Начни сразу с <span>бонусами</span></h1>
+        <div class="row">
+          <div class="input-group">
+            <label for="promo">Введи промокод:</label><input id="promo" MAXLENGTH="25" placeholder="Место для промокода" type="text">
+            <button class="btn btn-yellow">Активировать</button>
+          </div>
+        </div>
+        <div class="row">
+          <a href="">Условия использования</a>
+        </div>
+
+          <ul class="social">
+            <li><i class="fab fa-vk"></i></li>
+            <li><i class="fab fa-facebook-f"></i></li>
+            <li><i class="fab fa-telegram-plane"></i></li>
+          </ul>
+
+      </div>
+    </section>
+
+    <section class="section-7">
+      <div class="center">
+        <h1 class="top">Посети <span>игровые</span> разделы</h1>
+        <ul>
+          <li>
+            <p>Игровая зона</p>
+          </li>
+          <li>
+            <p>Маркет</p>
+          </li>
+        </ul>
+        <h1 class="bottom">и наш <span>маркет</span></h1>
+      </div>
     </section>
 
   </div>
