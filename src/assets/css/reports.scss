@@ -2,9 +2,9 @@
   width:500px;
   @include flex(center,center);
   .reports-link {
-    color:white;
+    color:$color4;
     font-size: 14px;
-    text-decoration-color: white;
+    text-decoration-color: $color4;
     text-decoration-style: dashed;
     cursor:pointer;
   }
@@ -58,14 +58,14 @@
     display: block;
     border: 2px #fbfffb dashed;
     text-align: center;
-    color: white;
+    color: $color4;
     font-weight: 100;
     transition: .5s border;
   }
 
   .inputfile:focus + label,
   .inputfile + label:hover {
-    border: 2px yellow dashed;
+    border: 2px $color3 dashed;
     transition: .5s border;
     p {
       cursor:pointer;

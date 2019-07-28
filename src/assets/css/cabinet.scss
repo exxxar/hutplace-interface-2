@@ -14,7 +14,7 @@
       margin-bottom: 10px;
       padding: 10px;
       box-sizing: border-box;
-      box-shadow: 0px 0px 11px 5px white inset;
+      box-shadow: 0px 0px 11px 5px $color4 inset;
       position: relative;
       img {
         width: 100%;
@@ -34,13 +34,13 @@
           width:30px;
           height:30px;
           margin-left:5px;
-          color:white;
+          color:$color4;
           cursor: pointer;
           font-size: 20px;
           opacity: 0.5;
           @include flex(center,center);
           &:hover {
-            color:yellow;
+            color:$color3;
             opacity: 1;
           }
         }
@@ -49,7 +49,7 @@
 
     .money {
       width:100%;
-      background-color:#393939 ;
+      background-color:$color2 ;
       padding:20px;
       box-sizing: border-box;
       margin-bottom: 10px;
@@ -58,10 +58,10 @@
         width: 100%;
         text-align: center;
         font-weight: 800;
-        color:white;
+        color:$color4;
         cursor: default;
         span {
-          color:yellow;
+          color:$color3;
         }
       }
     }
@@ -90,11 +90,11 @@
           padding: 10px;
 
           &.is-active {
-            border-bottom: 2px yellow solid;
+            border-bottom: 2px $color3 solid;
           }
 
           .tabs-component-tab-a {
-            color: white;
+            color: $color4;
             text-decoration: none;
             font-weight: 800;
             font-size: 12px;
@@ -105,7 +105,7 @@
 
           &.is-disabled {
             .tabs-component-tab-a {
-              font-color: gray;
+              font-color: $color6;
             }
           }
         }

@@ -5,46 +5,53 @@
 body {
   font-family: 'Open Sans';
 }
-header,section,footer {
-  width:100%;
+
+header, section, footer {
+  width: 100%;
   position: relative;
 
-  @include flex(center,center);
+  @include flex(center, center);
+
   .center {
-    width:1200px;
-    @include flex(center,center);
+    width: 1200px;
+    @include flex(center, center);
     padding: 10px;
     box-sizing: border-box;
   }
 }
 
 ul.social {
-  width:200px;
-  @include flex(space-around,center);
+  width: 200px;
+  @include flex(space-around, center);
+
   li {
-    width:50px;
-    height:50px;
+    width: 50px;
+    height: 50px;
     background: yellow;
     border-radius: 5px;
     box-shadow: 0px 0px 2px 0px black;
-    color:#393939;
-    cursor:pointer;
-    transition:0.5s;
-    @include flex(center,center);
+    color: #393939;
+    cursor: pointer;
+    transition: 0.5s;
+    @include flex(center, center);
+
     &:hover {
       background: white;
-      transition:0.5s;
+      transition: 0.5s;
     }
   }
 }
+
 header {
-  height:80px;
+  height: 80px;
   background-color: #2c3e50;
   box-shadow: 0px 3px 3px 0px black;
-  z-index:2;
+  z-index: 2;
+
   .center {
     justify-content: space-between;
     height: inherit;
+
     .logo-wrapper {
       background-color: #2c3e50;
       padding: 0 10px 10px 10px;
@@ -53,13 +60,8 @@ header {
       z-index: 2;
 
       &:after {
-        content: '';
-        width: 100%;
-        height: 43px;
-        bottom: 0;
-        left: 0;
-        z-index: 0;
-        position: absolute;
+
+        @include psClass($left: 0, $bottom: 0, $height: 43px, $width: 100%);
         box-shadow: 3px 3px 3px 0px black;
 
       }
@@ -67,19 +69,22 @@ header {
       .logo {
         width: 100px;
         transition: .5s;
+
         img {
-          width:100%;
-          height:100%;
+          width: 100%;
+          height: 100%;
         }
       }
 
       @media (max-width: 700px) {
         & {
           background-color: transparent;
+
           &:after {
             content: none;
 
           }
+
           .logo {
             width: 60px;
             transition: .5s;
@@ -90,11 +95,7 @@ header {
     }
 
     p {
-      text-align: right;
-      color:white;
-      text-transform: uppercase;
-      font-weight: 100;
-      font-size: 24px;
+      @include text(24px, white, 100, right, 150%, uppercase);
       margin-top: -47px;
     }
 
@@ -104,9 +105,10 @@ header {
 
     @media (max-width: 700px) {
       & {
-          p {
-            display: none;
-          }
+        p {
+          display: none;
+        }
+
         ul.social {
           margin-top: -10px;
         }
@@ -114,121 +116,100 @@ header {
     }
 
 
-
   }
 }
 
 .section-1 {
-  height:100vh;
+  height: 100vh;
   min-height: 650px;
-  background-color: #2c3e50;
   z-index: 1;
-  background-image: url('../assets/img/background-landing.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+
+  @include bg(#2c3e50, '../assets/img/background-landing.jpg', cover, fixed);
+
   .center {
     h1 {
-      font-size:54px;
-      color:white;
-      font-weight: 900;
-      text-align: right;
-      width: 100%;
-      line-height: 150%;
-      text-transform: uppercase;
+      width:100%;
+      @include text(54px, white, 900, right, 150%, uppercase);
+
       span {
-        color:yellow;
+        color: yellow;
       }
     }
 
     h3 {
-      font-size:18px;
-      color:white;
-      font-weight: 900;
-      text-align: right;
+      width:100%;
+      @include text(18px, white, 900, right, 150%, uppercase);
+    }
+
+    nav {
+      @include flex(flex-end, center);
       width: 100%;
-      line-height: 150%;
-      text-transform: uppercase;
-    }
-  nav {
-    @include flex(flex-end,center);
-    width:100%;
-    padding-top:20px;
-    ul {
-      width: 430px;
+      padding-top: 20px;
 
-      @media (max-width: 500px) {
-        & {
-          width:100%;
+      ul {
+        width: 430px;
+
+        @media (max-width: 500px) {
+          & {
+            width: 100%;
+          }
         }
-      }
-      li {
-        width: 100%;
-        position: relative;
-        h5 {
-          font-size: 18px;
-          color: yellow;
-          font-weight: 900;
+
+        li {
           width: 100%;
-          line-height: 150%;
-          text-transform: uppercase;
-          padding-top: 10px;
-        }
+          position: relative;
 
-        p {
-          font-size: 16px;
-          color: white;
-          font-weight: 400;
-          text-align: left;
-          width: 100%;
-          line-height: 150%;
-          padding-top: 5px;
-        }
+          h5 {
+            @include text(18px, yellow, 900, left, 150%, uppercase);
+            padding-top: 10px;
+          }
 
-        &:after {
-          content: '';
-          position: absolute;
-          top: 19px;
-          left: -70px;
-          width: 54px;
-          height: 50px;
-          background-image: url('../assets/img/rect.png');
-          background-size: cover;
-          background-position: center center;
+          p {
+            @include text(16px, white, 400, left, 150%);
+            padding-top: 5px;
+          }
 
-          display: inline-block;
-          font-style: normal;
-          font-variant: normal;
-          text-rendering: auto;
-          -webkit-font-smoothing: antialiased;
-          font-family: "Font Awesome 5 Free";
-          font-weight: 900;
-          text-shadow: 0px 0px 11px #FFEB3B;
+          &:after {
 
-          @include flex(center, center);
-          color:white;
-          font-size:18px;
-        }
+            @include psClass($left: -70px, $top: 19px, $height: 50px, $width: 54px);
+            @include bg(transparent, '../assets/img/rect.png', cover);
+            @include flex(center, center);
 
-        &:nth-of-type(1):after {
-          content: '\f135';
-        }
-        &:nth-of-type(2):after {
-          content: '\f79c';
-        }
-        &:nth-of-type(3):after {
-          content: '\f1b3';
+            font-style: normal;
+            font-variant: normal;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            text-shadow: 0px 0px 11px #FFEB3B;
+
+
+            color: white;
+            font-size: 18px;
+          }
+
+          &:nth-of-type(1):after {
+            content: '\f135';
+          }
+
+          &:nth-of-type(2):after {
+            content: '\f79c';
+          }
+
+          &:nth-of-type(3):after {
+            content: '\f1b3';
+          }
         }
       }
     }
-  }
   }
 
 }
 
 .section-2 {
-  background-color:#2c3e50;
-  height:250px;
+  background-color: #2c3e50;
+  height: 250px;
+
   .center {
     justify-content: space-around;
 
@@ -264,43 +245,45 @@ header {
         }
       }
     }
+
     .right {
-      width:400px;
-      @include flex(center,center);
+      width: 400px;
+      @include flex(center, center);
+
       .text {
-        width:100%;
+        width: 100%;
         padding: 10px;
         box-sizing: border-box;
-        border-left:3px yellow solid;
+        border-left: 3px yellow solid;
+
         p {
-          width:100%;
-          color:white;
-          font-weight: 600;
-          font-size:14px;
-          line-height: 150%;
-          text-transform: uppercase;
+
+          @include text(14px, white, 600, left, 150%, uppercase);
+
           strong {
-            font-size:24px;
+            font-size: 24px;
           }
+
           del {
-            font-size:36px;
+            font-size: 36px;
             text-decoration-line: line-through;
             text-decoration-color: yellow;
             text-decoration-width: 5px;
             font-weight: 900;
-            color:red;
+            color: red;
           }
         }
+
         ul {
           width: 100%;
-          padding:20px;
+          padding: 20px;
           box-sizing: border-box;
         }
       }
 
       @media (max-width: 500px) {
         & {
-          width:100%;
+          width: 100%;
         }
       }
     }
@@ -308,77 +291,65 @@ header {
 }
 
 .section-3 {
-  height:650px;
+  height: 650px;
   min-height: 650px;
-  background-color: #2c3e50;
   z-index: 1;
-  background-image: url('../assets/img/background-landing-2.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  @include bg(#2c3e50, '../assets/img/background-landing-2.jpg', cover, fixed);
+
 
   @media (max-width: 700px) {
     & {
       min-height: 100vh;
     }
   }
+
   .center {
     h1 {
-      font-size: 36px;
-      color: yellow;
-      font-weight: 900;
-      width: 100%;
-      line-height: 150%;
-      text-transform: uppercase;
       padding-top: 10px;
-      text-align: center;
+      @include text(36px, yellow, 900, center, 150%, uppercase);
     }
+
     ul {
       width: 100%;
-      @include flex(space-around,center);
-      padding:50px;
+      @include flex(space-around, center);
+      padding: 50px;
       box-sizing: border-box;
+
       li {
         width: 250px;
-        @include flex(center,center);
+        @include flex(center, center);
         flex-direction: column;
+
         h4 {
-          font-size: 16px;
-          color: white;
-          font-weight: 900;
-          width: 100%;
-          line-height: 150%;
-          text-transform: uppercase;
           padding-top: 10px;
-          text-align: center;
+          @include text(16px, white, 900, center, 150%, uppercase);
 
         }
+
         .circle {
-          margin-top:30px;
-          width:100px;
+          margin-top: 30px;
+          width: 100px;
           height: 100px;
           border-radius: 50%;
-          border:10px yellow solid;
-          @include flex(center,center);
+          border: 10px yellow solid;
+          @include flex(center, center);
           background-color: #2c3e50;
           box-shadow: -3px 0px 2px 0px black, 0px 0px 8px 7px #000000 inset;
-          p {
-            color:white;
-            font-weight: 900;
-            font-size:24px;
-            text-transform: uppercase;
 
+          p {
+            @include text(24px, white, 900, center, 150%, uppercase);
           }
 
           &.large {
-            padding:20px;
+            padding: 20px;
 
             p {
               margin-top: 10px;
-              font-size:34px;
+              font-size: 34px;
+
               &:nth-of-type(2) {
                 font-size: 14px;
-                margin-top:-20px;
+                margin-top: -20px;
               }
             }
           }
@@ -391,29 +362,27 @@ header {
 
 .section-4 {
   background-color: #2c3e50;
-  min-height:250px;
-  padding:50px;
+  min-height: 250px;
+  padding: 50px;
   box-sizing: border-box;
+
   .center {
     h1 {
-      font-size:24px;
-      color:white;
-      font-weight: 900;
-      text-align: center;
-      width: 100%;
-      line-height: 150%;
-      text-transform: uppercase;
+      @include text(24px, white, 900, center, 150%, uppercase);
     }
+
     ul {
-      width:100%;
-      padding:10px;
+      width: 100%;
+      padding: 10px;
       box-sizing: border-box;
-      @include flex(space-around,center);
+      @include flex(space-around, center);
+
       li {
-        width:170px;
-        height:70px;
-        padding:10px;
+        width: 170px;
+        height: 70px;
+        padding: 10px;
         box-sizing: border-box;
+
         img {
           height: 100%;
 
@@ -425,44 +394,37 @@ header {
 }
 
 .section-5 {
-  height:650px;
+  height: 650px;
   min-height: 650px;
-  background-color: rgba(8, 29, 50, 0.83);
   z-index: 1;
-  background-image: url('../assets/img/background-landing-3.jpg');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
+  @include bg(rgba(8, 29, 50, 0.83), '../assets/img/background-landing-3.jpg', cover, fixed);
+
+
   .center {
     .slider {
-      width:100%;
-      height:400px;
+      width: 100%;
+      height: 400px;
     }
 
   }
 
   .modal {
-    width:100%;
-    height:100%;
+    width: 100%;
+    height: 100%;
     position: absolute;
-    z-index:2;
-    background-color:rgba(8, 29, 50, 0.83);
-    top:0;
-    left:0;
-    @include flex(center,center);
+    z-index: 2;
+    background-color: rgba(8, 29, 50, 0.83);
+    top: 0;
+    left: 0;
+    @include flex(center, center);
 
     h1 {
-      width:100%;
-      font-size:24px;
-      font-weight: 900;
-      color:white;
-      line-height: 150%;
-      text-align: center;
-      text-transform: uppercase;
+      width: 100%;
+      @include text(24px, white, 900, center, 150%, uppercase);
     }
 
     ul.social {
-      padding-top:20px;
+      padding-top: 20px;
     }
   }
 }
@@ -470,39 +432,29 @@ header {
 
 .section-6 {
   background-color: #1c3c50;
-  height:100vh;
+  height: 100vh;
   min-height: 1000px;
+
   .center {
     height: 100%;
-    padding:50px 0px;
+    padding: 50px 0px;
     box-sizing: border-box;
-    background-image: url('../assets/img/bg-2.png');
-    background-position: center center;
-    background-size: cover;
+
+    @include bg(#1c3c50, '../assets/img/bg-2.png', cover);
+
     h1 {
       align-self: flex-start;
-      width:100%;
-      font-size:42px;
-      font-weight: 900;
-      color:white;
-      line-height: 150%;
-      text-align: center;
-      text-transform: uppercase;
+      @include text(42px, white, 900, center, 150%, uppercase);
+
       span {
-        color:yellow;
+        color: yellow;
       }
 
     }
 
     h2 {
       align-self: flex-end;
-      width:100%;
-      font-size:42px;
-      font-weight: 100;
-      color:white;
-      line-height: 150%;
-      text-align: center;
-      text-transform: uppercase;
+      @include text(42px, white, 100, center, 150%, uppercase);
 
       @media (max-width: 580px) {
         & {
@@ -513,11 +465,13 @@ header {
 
     .bonus {
       position: relative;
-      width:100%;
-      @include flex(center,center);
-      img{
+      width: 100%;
+      @include flex(center, center);
+
+      img {
         border: 10px transparent solid;
         border-radius: 50%;
+
         &:hover {
           border: 10px yellow solid;
           transition: border .5s;
@@ -547,7 +501,7 @@ header {
         z-index: 0;
       }
 
-      @media (max-width:700px) {
+      @media (max-width: 700px) {
         & {
           img:nth-of-type(1) {
             width: 125px;
@@ -577,9 +531,10 @@ header {
 
     .arrow {
       position: relative;
-      width:100%;
-      height:20px;
-      @include flex(flex-end,flex-start);
+      width: 100%;
+      height: 20px;
+      @include flex(flex-end, flex-start);
+
       img {
         position: absolute;
         top: 60px;
@@ -599,52 +554,32 @@ header {
 
     h1 {
       align-self: flex-start;
-      width:100%;
-      font-size:42px;
-      font-weight: 900;
-      color:white;
-      line-height: 150%;
-      text-align: center;
-      text-transform: uppercase;
+      width: 100%;
+      @include text(42px, white, 900, center, 150%, uppercase);
       position: relative;
 
       span {
-        color:yellow;
+        color: yellow;
       }
 
       &.top:after {
-        width: 65px;
-        height: 207px;
-        content: '';
-        top: 25px;
-        left: 10%;
-        position: absolute;
-        background-image: url('../assets/img/arrow-down.png');
-        background-size: cover;
-        background-position: center center;
+        @include psClass($left: 10%, $top: 25px, $height: 207px, $width: 65px);
+        @include bg(transparent, '../assets/img/arrow-down.png', cover);
 
-        @media (max-width:900px) {
+
+        @media (max-width: 900px) {
           & {
-            //width: 37px;
-            //height: 128px;
-            left:5%;
-            top:53px;
+            left: 5%;
+            top: 53px;
           }
         }
       }
 
       &.bottom:after {
-        width: 65px;
-        height: 215px;
-        content: '';
-        bottom: 26px;
-        right: 15%;
-        position: absolute;
-        background-image: url('../assets/img/arrow-up.png');
-        background-size: cover;
-        background-position: center center;
+        @include psClass($right: 15%, $bottom: 26px, $height: 215px, $width: 65px);
+        @include bg(transparent, '../assets/img/arrow-up.png', cover);
 
-        @media (max-width:900px) {
+        @media (max-width: 900px) {
           & {
             width: 37px;
             height: 128px;
@@ -652,40 +587,41 @@ header {
         }
 
 
-        @media (max-width:650px) {
+        @media (max-width: 650px) {
           & {
 
-            bottom:53px;
+            bottom: 53px;
           }
         }
       }
     }
 
     ul {
-      width:100%;
-      @include flex(center,center);
+      width: 100%;
+      @include flex(center, center);
+
       li {
-        width:300px;
-        height:300px;
+        width: 300px;
+        height: 300px;
         background-color: #393939;
         box-shadow: 2px 2px 2px 0px black;
-        margin-right:10px;
+        margin-right: 10px;
         margin-left: 10px;
-        @include flex(center,center);
+        @include flex(center, center);
         background-position: center center;
         background-size: cover;
         cursor: pointer;
 
 
-
         &:hover {
-          box-shadow: 0px 0px 2px 0px black,0px 0px 11px 5px white inset;
+          box-shadow: 0px 0px 2px 0px black, 0px 0px 11px 5px white inset;
           transition: .5s;
         }
+
         p {
           font-weight: 100;
-          font-size:42px;
-          color:white;
+          font-size: 42px;
+          color: white;
           text-transform: uppercase;
           text-align: center;
         }
@@ -693,16 +629,18 @@ header {
         &:nth-of-type(1) {
           background-image: url('../assets/img/lottery-bg.png');
         }
+
         &:nth-of-type(2) {
           background-image: url('../assets/img/coins-bg.png');
         }
 
-        @media (max-width:900px) {
+        @media (max-width: 900px) {
           & {
-            width:200px;
+            width: 200px;
             height: 200px;
+
             p {
-              font-size:24px;
+              font-size: 24px;
             }
           }
         }
@@ -713,75 +651,67 @@ header {
 }
 
 .section-8 {
-  background-color:#2c3e50;
+  background-color: #2c3e50;
   padding: 50px 0px;
+
   .center {
     justify-content: space-around;
 
 
     h1 {
       padding: 15px 0px;
-      width:100%;
-      font-size:42px;
-      font-weight: 900;
-      color:white;
-      line-height: 150%;
-      text-align: center;
-      text-transform: uppercase;
-      position: relative;
+      @include text(42px, white, 900, center, 150%, uppercase);
+
       span {
-        color:yellow;
+        color: yellow;
       }
     }
+
     .logo {
-      width:100%;
-      @include flex(center,center);
-      color:yellow;
+      width: 100%;
+      @include flex(center, center);
+      color: yellow;
       font-size: 56px;
     }
+
     .row {
-      width:100%;
+      width: 100%;
       @include flex(center, center);
+
       .input-group {
-        width:400px;
+        width: 400px;
+
         label {
-          width:100%;
-          font-weight: 800;
-          color:white;
-          text-align: left;
-          text-transform: uppercase;
-          font-size: 10px;
+          width: 100%;
+          @include text(10px, white, 900, left, 150%, uppercase);
         }
+
         input {
-          width:100%;
-          padding:10px;
+          width: 100%;
+          padding: 10px;
           box-sizing: border-box;
-          border:none;
-          border-bottom:2px white solid;
-          font-weight: 800;
-          font-size:24px;
-          color:white;
+          border: none;
+          border-bottom: 2px white solid;
           background-color: transparent;
-          text-align: center;
+
+          @include text(24px, white, 900, center, 150%, uppercase);
+
           &::placeholder {
-            font-weight: 100;
-            color:lightgray;
-            text-align: left;
-            font-family: 'Open Sans';
+            @include text(24px, lightgray, 100, left, 150%);
 
           }
 
         }
 
         .btn {
-          margin-top:20px;
+          margin-top: 20px;
           padding: 20px 20px;
           text-align: center;
           font-weight: 800;
           list-style: none;
           cursor: pointer;
           border: none;
-          width:100%;
+          width: 100%;
           box-shadow: 0px 0px 3px 0px black;
           transition: .5s;
 
@@ -805,9 +735,10 @@ header {
             &:hover {
               background-color: white;
               transition: .5s;
-              color:#393939;
+              color: #393939;
+
               a {
-                color:#393939;
+                color: #393939;
               }
             }
 
@@ -843,18 +774,17 @@ header {
             &:hover {
               transition: .5s;
               background-color: white;
-              transition: .5s;
-              color:#393939;
+              color: #393939;
 
               a {
-                color:#393939;
+                color: #393939;
               }
 
             }
 
             &.active {
               background-color: yellow;
-              color:#393939;
+              color: #393939;
 
             }
           }
@@ -891,9 +821,7 @@ header {
       }
 
       & > a {
-        font-weight: 900;
-        font-size: 12px;
-        color:white;
+        @include text(12px, white, 900, center, 150%);
         padding: 25px 0px;
         text-decoration-style: dashed;
       }
@@ -902,3 +830,26 @@ header {
   }
 }
 
+footer {
+  height: 200px;
+  background-color: #393939;
+
+  .center {
+
+    p {
+      padding: 10px;
+      width:100%;
+      @include text(10px, white, 900, center, 150%);
+    }
+
+    .logo {
+      width: 100px;
+      height: 100px;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

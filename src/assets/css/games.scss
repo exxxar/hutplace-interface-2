@@ -12,7 +12,7 @@
     text-align: center;
     font-weight: 900;
     font-size:12px;
-    color:white;
+    color:$color4;
   }
   .filters {
     width:100%;
@@ -31,7 +31,7 @@
       }
 
       input[type=radio]:checked + label>img {
-        box-shadow: 0px 0px 2px 2px yellow inset, 0px 0px 2px 0px black;
+        box-shadow: 0px 0px 2px 2px $color3 inset, 0px 0px 2px 0px $color12;
       }
 
       /* Stuff after this is only to make things more pretty */
@@ -41,8 +41,8 @@
         padding:10px;
         box-sizing: border-box;
         transition: 500ms all;
-        background-color: #393939;
-        box-shadow:  0px 0px 2px 0px black;
+        background-color: $color2;
+        box-shadow:  0px 0px 2px 0px $color12;
         cursor: pointer;
       }
 
@@ -61,7 +61,7 @@
   @include flex(center,center);
   h1.category {
     font-size: 36px;
-    color: white;
+    color: $color4;
     font-weight: 100;
     width: 100%;
     @include flex(center, center);
@@ -76,7 +76,7 @@
         content: '';
         width: 100px;
         height: 2px;
-        background: white;
+        background: $color4;
         position: absolute;
         top: 30px;
         left: 0px;
@@ -86,7 +86,7 @@
         content: '';
         width: 100px;
         height: 2px;
-        background: white;
+        background: $color4;
         position: absolute;
         top: 30px;
         right: 0px;
@@ -99,7 +99,7 @@
     padding: 20px;
     flex-wrap:wrap;
     .card {
-      color: white;
+      color: $color4;
       margin: 10px;
       display: flex;
       justify-content: center;
@@ -109,8 +109,8 @@
       .card-wrapper {
         padding: 5px;
         box-sizing: border-box;
-        border: 1px white solid;
-        box-shadow: 0px 0px 8px 1px white inset , 0px 0px 3px 0px #0d0d0d;;
+        border: 1px $color4 solid;
+        box-shadow: 0px 0px 8px 1px $color4 inset , 0px 0px 3px 0px $color12;
         position: relative;
         .card-data {
           z-index: 0;
@@ -120,8 +120,8 @@
           right:0;
           bottom:0;
           padding: 10px 20px;
-          background:white;
-          color:#393939;
+          background:$color4;
+          color:$color2;
           z-index: 11;
           font-weight: 800;
           font-size:14px;
@@ -132,8 +132,8 @@
           top:0;
           left:0;
           padding: 10px 20px;
-          background:white;
-          color:#393939;
+          background:$color4;
+          color:$color2;
           z-index: 11;
           font-weight: 800;
           font-size:14px;
@@ -145,8 +145,8 @@
         height: 35px;
         /* padding: 0px; */
         margin-top: 5px;
-        box-shadow: 0px 0px 3px 0px #0d0d0d;
-        background-color: #393939;
+        box-shadow: 0px 0px 3px 0px $color12;
+        background-color: $color2;
         position: relative;
         overflow: hidden;
         .line {
@@ -189,7 +189,7 @@
     margin-right: 10px;
     width: 20px;
     height: 20px;
-    border: 2px solid #c8ccd4;
+    border: 2px solid $color6;
     border-radius: 100%;
     -webkit-tap-highlight-color: transparent;
   }
@@ -201,7 +201,7 @@
     width: 10px;
     height: 10px;
     border-radius: 100%;
-    background: #ff0;
+    background: $color3;
     transform: scale(0);
     transition: all 0.2s ease;
     opacity: 0.08;
@@ -211,7 +211,7 @@
     transform: scale(3.6);
   }
   input[type="radio"]:checked + .label {
-    border-color: #ff0;
+    border-color: $color3;
   }
   input[type="radio"]:checked + .label:after {
     transform: scale(1);

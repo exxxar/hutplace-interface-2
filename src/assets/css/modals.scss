@@ -28,16 +28,16 @@
     font-size: 14px;
     line-height: 150%;
     text-transform: uppercase;
-    color:white;
+    color:$color4;
     span {
-      color:yellow;
+      color:$color3;
     }
   }
   hr {
     border:none;
     width:100%;
     height:1px;
-    background-color: white;
+    background-color: $color4;
   }
   h1 {
     width: 100%;
@@ -46,7 +46,7 @@
     font-size: 24px;
     line-height: 150%;
     text-transform: uppercase;
-    color:white;
+    color:$color4;
     padding: 10px;
     box-sizing: border-box;
   }
@@ -58,9 +58,9 @@
     font-size: 24px;
     line-height: 150%;
     text-transform: uppercase;
-    color:white;
+    color:$color4;
     span {
-      color:yellow;
+      color:$color3;
     }
   }
 
@@ -72,7 +72,7 @@
     label {
       font-weight: 600;
       font-size: 10px;
-      color:white;
+      color:$color4;
     }
 
 
@@ -80,8 +80,8 @@
     select,
     input {
       border: none;
-      border-bottom: 1px solid white;
-      color:white;
+      border-bottom: 1px solid $color4;
+      color:$color4;
       font-weight:100 ;
       font-size:24px;
       width: 100%;
@@ -92,7 +92,7 @@
       text-transform: uppercase;
       font-family: 'Open Sans';
       option {
-        color:#393939;
+        color:$color2;
       }
     }
 
@@ -118,7 +118,7 @@
    margin-top: 10px;
     width: 100%;
     padding:10px 20px;
-    border:1px yellow solid;
+    border:1px $color3 solid;
     overflow: hidden;
    box-sizing: border-box;
    cursor:pointer;
@@ -129,8 +129,8 @@
      right: 10px;
      top: 10px;
      transform-origin: center center;
-     border-right: 2px solid yellow;
-     border-bottom: 2px solid yellow;
+     border-right: 2px solid $color3;
+     border-bottom: 2px solid $color3;
      width: 10px;
      height: 10px;
      transform: rotate(45deg);
@@ -145,7 +145,7 @@
      top: 10px;
      transform-origin: center center;
 
-     border-bottom: 2px solid yellow;
+     border-bottom: 2px solid $color3;
      width: 10px;
      height: 10px;
 
@@ -167,7 +167,7 @@
      &:after {
        transform: rotate(45deg);
        transition: .5s;
-       border-right: 2px solid yellow;
+       border-right: 2px solid $color3;
      }
 
      & > li > ul {
@@ -176,7 +176,7 @@
    }
     & > li {
      & > p {
-        color:white;
+        color:$color4;
         line-height: 150%;
         font-weight: 600;
         font-size:12px;
@@ -190,7 +190,7 @@
         width:100%;
         display:none;
         li {
-          color:yellow;
+          color:$color3;
           font-weight: 600;
           font-size:12px;
           padding:5px 5px;
@@ -204,20 +204,20 @@
 .history-modal {
   width:800px;
   ul {
-    border: 1px yellow solid;
+    border: 1px $color3 solid;
     margin-top: 10px;
     @include flex(space-between,center);
     li {
       width:16%;
        text-align: center;
-      color:white;
+      color:$color4;
       font-weight: 600;
       font-size:12px;
       padding:10px;
       box-sizing: border-box;
 
       a {
-        color:yellow;
+        color:$color3;
       }
     }
   }

@@ -15,7 +15,7 @@
   margin-right: 10px;
   width: 16px;
   height: 16px;
-  border: 2px solid #c8ccd4;
+  border: 2px solid $color13;
   border-radius: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -27,7 +27,7 @@
   width: 12px;
   height: 12px;
   border-radius: 100%;
-  background: yellow;
+  background: $color3;
   transform: scale(0);
   transition: all 0.2s ease;
   opacity: 0.08;
@@ -37,7 +37,7 @@
   transform: scale(3.6);
 }
 input[type="radio"]:checked + .label {
-  border-color: yellow;
+  border-color: $color3;
 }
 input[type="radio"]:checked + .label:after {
   transform: scale(1);

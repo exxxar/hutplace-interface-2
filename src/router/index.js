@@ -9,6 +9,7 @@ import Cabinet from '@/pages/Cabinet'
 import Games from '@/pages/Games'
 import Start from '@/pages/Start'
 import Lottery from '@/pages/Lottery'
+import Main from '@/pages/Main'
 import Notifications from 'vue-notification'
 import VModal from 'vue-js-modal'
 import Lang from 'vuejs-localization'
@@ -32,6 +33,14 @@ export default new Router({
         layout: 'start'
       }
     },
+
+    {
+      path: '/index',
+      name: 'Main',
+      component: Main,
+
+    },
+
     {
       path: '/market',
       name: 'Market',

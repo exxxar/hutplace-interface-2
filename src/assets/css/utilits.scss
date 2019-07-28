@@ -1,14 +1,97 @@
-@import "tooltip.scss";
-
 $width: 1200px;
 
 $bp1:1400px;
 
-@mixin flex($horizontal, $vertical) {
+/*
+ТЕМА 1
+$mainBg:'../assets/img/background.jpg';
+$color1:#2c3e50; //color
+$color2: #393939; //bg color
+$color3:yellow; //color \ btn-color
+$color4:white; // color \ btn-color
+$color5:darkred; //color
+$color6:gray;
+$color7:#74b65f; //btn-random
+$color8:#5fa252; //btn-random line
+$color9:#d86a43; //btn-buy
+$color10:#393939af; //slot in lottery + opacity
+$color11:#50504f; //number in slot
+$color12:black; //number in slot
+$color13:lightgray;*/
+
+/*
+ТЕМА 2
+
+$mainBg:'../assets/img/background-landing-2.jpg';
+$color1:#393939; //color
+$color2: #4a2626; //bg color
+$color3:yellow; //color \ btn-color
+$color4:white; // color \ btn-color
+$color5:darkred; //color
+$color6:gray;
+$color7:#74b65f; //btn-random
+$color8:#5fa252; //btn-random line
+$color9:#d86a43; //btn-buy
+$color10:#393939af; //slot in lottery + opacity
+$color11:#50504f; //number in slot
+$color12:black; //number in slot
+$color13:lightgray;*/
+
+/*ТЕМА 3*/
+$mainBg:'../assets/img/background-landing.jpg';
+$color1:#393939; //color
+$color2: #2c3e50; //bg color
+$color3:yellow; //color \ btn-color
+$color4:white; // color \ btn-color
+$color5:darkred; //color
+$color6:gray;
+$color7:#74b65f; //btn-random
+$color8:#5fa252; //btn-random line
+$color9:#d86a43; //btn-buy
+$color10:#393939af; //slot in lottery + opacity
+$color11:#50504f; //number in slot
+$color12:black; //number in slot
+$color13:lightgray;
+
+
+@mixin flex($horizontal:center, $vertical:center,$wrap:wrap) {
   display: flex;
   justify-content: $horizontal;
   align-items: $vertical;
-  flex-wrap: wrap;
+  flex-wrap: $wrap;
+}
+
+@mixin text($size:12px,$color:white,$weight:400,$align:center,$height:150%,$transform:none){
+  font-size:$size;
+  color:$color;
+  font-weight: $weight;
+  text-align: $align;
+ // width: 100%;
+  line-height: $height;
+  text-transform: $transform;
+  font-family: 'Open Sans',sans-serif;
+
+}
+
+@mixin bg($color,$url,$size:cover,$attachment:scroll,$position:center center) {
+  background-color: $color;
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+  background-attachment:$attachment
+}
+
+@mixin psClass($left:unset,$top:unset,$right:unset,$bottom:unset,$width:unset,$height:unset,$index:0) {
+  content: '';
+  width: $width;
+  height: $height;
+  bottom: $bottom;
+  top:$top;
+  left:$left;
+  right:$right;
+  z-index: $index;
+  position: absolute;
+
 }
 
 button,

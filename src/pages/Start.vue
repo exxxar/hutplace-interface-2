@@ -5,7 +5,8 @@
       <div class="center">
         <div class="logo-wrapper">
           <div class="logo">
-            <img src="../assets/img/logo.png" alt="">
+            <a href="/index">   <img src="../assets/img/logo.png" alt=""></a>
+
           </div>
         </div>
 
@@ -46,7 +47,10 @@
         <div class="left"><img src="../assets/img/cards-block.png" alt=""></div>
         <div class="right">
           <div class="text">
-            <p><del>999 РУБ!</del> попробуй бесплатно!</p>
+            <p>
+              <del>999 РУБ!</del>
+              попробуй бесплатно!
+            </p>
             <p><strong>Авторизуйся</strong></p>
             <p>и почувствуй вкус победы!</p>
           </div>
@@ -62,29 +66,29 @@
     <section class="section-3">
       <div class="center">
         <h1>Статистика</h1>
-          <ul>
-            <li>
-              <h4>Куплено мест</h4>
-              <div class="circle">
-                <p>410</p>
-              </div>
-            </li>
+        <ul>
+          <li>
+            <h4>Куплено мест</h4>
+            <div class="circle">
+              <p>410</p>
+            </div>
+          </li>
 
-            <li>
-              <h4>Игроки сэкономили</h4>
-              <div class="circle large">
-                <p>14580</p>
-                <p>Рублей</p>
-              </div>
-            </li>
+          <li>
+            <h4>Игроки сэкономили</h4>
+            <div class="circle large">
+              <p>14580</p>
+              <p>Рублей</p>
+            </div>
+          </li>
 
-            <li>
-              <h4>Проведено игр</h4>
-              <div class="circle">
-                <p>92</p>
-              </div>
-            </li>
-          </ul>
+          <li>
+            <h4>Проведено игр</h4>
+            <div class="circle">
+              <p>92</p>
+            </div>
+          </li>
+        </ul>
 
       </div>
     </section>
@@ -148,8 +152,7 @@
           </ul>
 
         </div>
-        </div>
-
+      </div>
 
     </section>
 
@@ -157,7 +160,8 @@
       <div class="center">
         <h1>Реальные <span>соперники</span>,<br>честная борьба!</h1>
         <div class="bonus">
-          <img src="../assets/img/ach-3.png" v-tooltip.bottom="'Третье место в общем рейтинге<br> +50 000 Coins'" alt="">
+          <img src="../assets/img/ach-3.png" v-tooltip.bottom="'Третье место в общем рейтинге<br> +50 000 Coins'"
+               alt="">
           <img src="../assets/img/ach-2.png" v-tooltip.bottom="'Второе место в общем рейтинге<br> +200 Exp'" alt="">
           <img src="../assets/img/ach-1.png" v-tooltip.bottom="'Первое место в общем рейтинге<br> +500 Pucks'" alt="">
 
@@ -176,7 +180,8 @@
         <h1>Начни сразу с <span>бонусами</span></h1>
         <div class="row">
           <div class="input-group">
-            <label for="promo">Введи промокод:</label><input id="promo" MAXLENGTH="25" placeholder="Место для промокода" type="text">
+            <label for="promo">Введи промокод:</label><input id="promo" MAXLENGTH="25" placeholder="Место для промокода"
+                                                             type="text">
             <button class="btn btn-yellow">Активировать</button>
           </div>
         </div>
@@ -184,11 +189,11 @@
           <a href="">Условия использования</a>
         </div>
 
-          <ul class="social">
-            <li><i class="fab fa-vk"></i></li>
-            <li><i class="fab fa-facebook-f"></i></li>
-            <li><i class="fab fa-telegram-plane"></i></li>
-          </ul>
+        <ul class="social">
+          <li><i class="fab fa-vk"></i></li>
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-telegram-plane"></i></li>
+        </ul>
 
       </div>
     </section>
@@ -208,20 +213,31 @@
       </div>
     </section>
 
+    <footer>
+      <div class="center">
+
+        <div class="logo">
+          <img src="../assets/img/logo.png" alt="">
+        </div>
+
+        <p>Все права защищены(c)HUT-PLACES.COM</p>
+
+      </div>
+    </footer>
   </div>
 </template>
 
 <script>
 
-  import { Carousel3d, Slide } from 'vue-carousel-3d';
+import {Carousel3d, Slide} from 'vue-carousel-3d'
 
-  export default {
-    name: "Start",
-    components: {
-      Carousel3d,
-      Slide
-    }
+export default {
+  name: 'Start',
+  components: {
+    Carousel3d,
+    Slide
   }
+}
 </script>
 
 <style lang="scss">
@@ -229,34 +245,38 @@
   @import "../assets/css/start.scss";
 
   .carousel-3d-container {
-  height:390px !important;
-  padding:10px;
+    height: 390px !important;
+    padding: 10px;
     box-sizing: border-box;
 
-  .carousel-3d-slide {
+    .carousel-3d-slide {
 
-    border:none;
-    box-shadow: 0px 0px 5px 0px black;
-    img {
-      width: 100%;
-      height:100%;
-      position: relative;
-      z-index: 0;
+      border: none;
+      box-shadow: 0px 0px 5px 0px black;
+
+      img {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+      }
+
+      .shadow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        box-shadow: 0px 0px 11px 5px white inset;
+      }
+
+      background-color: red !important;
+
+      .title {
+        font-size: 222px;
+      }
     }
-
-    .shadow {
-      position: absolute;
-      top:0;
-      left:0;
-      width:100%;
-      height:100%;
-      z-index: 1;
-      box-shadow:0px 0px 11px 5px white inset;
-    }
-
-    background-color:red !important;
-  .title { font-size: 222px; }
-  }
   }
 
 </style>

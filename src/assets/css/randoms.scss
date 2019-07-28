@@ -4,8 +4,8 @@
 .example-slide {
  @include flex(center,center);
 
-  background-color: #666;
-  color: #999;
+  background-color: $color6;
+  color: $color13;
 
   font-size: 1.5rem;
   min-height: 10rem;
@@ -18,7 +18,7 @@ h1 {
   font-size: 30px;
   strong {
     font-size: 36px;
-    color: white;
+    color: $color4;
     i {
       color: #ff0;
       font-style: italic;
@@ -68,7 +68,7 @@ h1 {
         font-size: 12px;
         text-transform: uppercase;
         font-weight: 800;
-        color: white;
+        color: $color4;
         line-height: 35px;
         text-decoration-style: dashed;
 
@@ -92,7 +92,7 @@ h1 {
       .large-promo {
         height: 350px;
         box-sizing: border-box;
-        border: 2px #a7a5a5 solid;
+        border: 2px $color6 solid;
         padding: 10px;
         width: 100%;
       }
@@ -101,8 +101,8 @@ h1 {
         margin-top: 10px;
         height: 50px;
         width: 100%;
-        background-color: #393939;
-        box-shadow: 2px 2px 11px 0px black;
+        background-color: $color2;
+        box-shadow: 2px 2px 2px 0px $color12;
         @include flex(space-between, center);
         box-sizing: border-box;
         position: relative;
@@ -115,7 +115,7 @@ h1 {
           font-size: 16px;
           font-weight: 900;
           margin-left: 20px;
-          color: #989898;
+          color: $color6;
         }
 
         .platforms {
@@ -125,7 +125,7 @@ h1 {
             list-style: none;
 
             a {
-              color: white;
+              color: $color4;
               padding-left: 5px;
               padding-right: 5px;
               text-decoration-style: dashed;
@@ -135,7 +135,7 @@ h1 {
 
         p.counter {
           @include flex(center, center);
-          color: #989898;
+          color: $color6;
           font-weight: 900;
 
           span {
@@ -143,8 +143,8 @@ h1 {
             height: 50px;
             @include flex(center, center);
             margin-left: 20px;
-            background: yellow;
-            color: #000000;
+            background: $color3;
+            color: $color12;
             font-size: 16px;
             font-weight: 900;
 
