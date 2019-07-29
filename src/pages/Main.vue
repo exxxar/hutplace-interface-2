@@ -1,5 +1,6 @@
 <template>
   <div>
+
     <ul>
       <li class="btn auction closed" @click="showError('Раздел Аукцион закрыт!')">
         {{$lang.messages.auction}}

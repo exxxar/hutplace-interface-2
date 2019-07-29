@@ -52,6 +52,9 @@ $color10:#393939af; //slot in lottery + opacity
 $color11:#50504f; //number in slot
 $color12:black; //number in slot
 $color13:lightgray;
+$color14:yellow; //partials block
+$color15:#2c3e50; //partials shadow color
+$color16:#2c3e50;//partials label color
 
 
 @mixin flex($horizontal:center, $vertical:center,$wrap:wrap) {
