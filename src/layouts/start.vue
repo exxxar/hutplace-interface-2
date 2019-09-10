@@ -5,9 +5,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'startLayout'   // you can enter any name (optional)
-  }
+export default {
+  name: 'startLayout' // you can enter any name (optional)
+}
 </script>
 
 <style>

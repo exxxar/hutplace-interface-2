@@ -1,6 +1,7 @@
-@import '../../../node_modules/reset-css/sass/_reset.scss';
+@import 'reset.scss';
 @import "cardstyle.scss";
 @import "utilits.scss";
+@import "tooltip.scss";
 
 body {
   font-family: 'Open Sans';
@@ -124,7 +125,7 @@ header {
   min-height: 650px;
   z-index: 1;
 
-  @include bg(#2c3e50, '../assets/img/background-landing.jpg', cover, fixed);
+  @include bg(#2c3e50, '/static/img/background-landing.jpg', cover, fixed);
 
   .center {
     h1 {
@@ -172,7 +173,7 @@ header {
           &:after {
 
             @include psClass($left: -70px, $top: 19px, $height: 50px, $width: 54px);
-            @include bg(transparent, '../assets/img/rect.png', cover);
+            @include bg(transparent, '/static/img/rect.png', cover);
             @include flex(center, center);
 
             font-style: normal;
@@ -294,12 +295,12 @@ header {
   height: 650px;
   min-height: 650px;
   z-index: 1;
-  @include bg(#2c3e50, '../assets/img/background-landing-2.jpg', cover, fixed);
+  @include bg(#2c3e50, '/static/img/background-landing-2.jpg', cover, fixed);
 
 
   @media (max-width: 700px) {
     & {
-      min-height: 100vh;
+      min-height:950px;
     }
   }
 
@@ -317,6 +318,7 @@ header {
 
       li {
         width: 250px;
+
         @include flex(center, center);
         flex-direction: column;
 
@@ -397,7 +399,7 @@ header {
   height: 650px;
   min-height: 650px;
   z-index: 1;
-  @include bg(rgba(8, 29, 50, 0.83), '../assets/img/background-landing-3.jpg', cover, fixed);
+  @include bg(rgba(8, 29, 50, 0.83), '/static/img/background-landing-3.jpg', cover, fixed);
 
 
   .center {
@@ -440,7 +442,7 @@ header {
     padding: 50px 0px;
     box-sizing: border-box;
 
-    @include bg(#1c3c50, '../assets/img/bg-2.png', cover);
+    @include bg(#1c3c50, '/static/img/bg-2.png', cover);
 
     h1 {
       align-self: flex-start;
@@ -546,7 +548,7 @@ header {
 
 .section-7 {
   background-color: #1c3c50;
-  height: 600px;
+  padding:50px 0px;
 
   .center {
     height: 100%;
@@ -564,7 +566,7 @@ header {
 
       &.top:after {
         @include psClass($left: 10%, $top: 25px, $height: 207px, $width: 65px);
-        @include bg(transparent, '../assets/img/arrow-down.png', cover);
+        @include bg(transparent, '/static/img/arrow-down.png', cover);
 
 
         @media (max-width: 900px) {
@@ -577,7 +579,7 @@ header {
 
       &.bottom:after {
         @include psClass($right: 15%, $bottom: 26px, $height: 215px, $width: 65px);
-        @include bg(transparent, '../assets/img/arrow-up.png', cover);
+        @include bg(transparent, '/static/img/arrow-up.png', cover);
 
         @media (max-width: 900px) {
           & {
@@ -607,6 +609,7 @@ header {
         box-shadow: 2px 2px 2px 0px black;
         margin-right: 10px;
         margin-left: 10px;
+        margin-bottom:10px;
         @include flex(center, flex-start);
         background-position: center center;
         background-size: contain;
@@ -628,11 +631,11 @@ header {
         }
 
         &:nth-of-type(1) {
-          background-image: url('../assets/img/lottery-bg.png');
+          background-image: url('/static/img/lottery-bg.png');
         }
 
         &:nth-of-type(2) {
-          background-image: url('../assets/img/coins-bg.png');
+          background-image: url('/static/img/coins-bg.png');
         }
 
         @media (max-width: 900px) {
@@ -851,6 +854,43 @@ footer {
         width: 100%;
         height: 100%;
       }
+    }
+  }
+}
+
+
+.carousel-3d-container {
+  height: 390px !important;
+  padding: 10px;
+  box-sizing: border-box;
+
+  .carousel-3d-slide {
+
+    border: none;
+    box-shadow: 0px 0px 5px 0px black;
+
+    img {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 0;
+
+    }
+
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      box-shadow: 0px 0px 11px 5px white inset;
+    }
+
+    background-color: red !important;
+
+    .title {
+      font-size: 222px;
     }
   }
 }

@@ -1,10 +1,15 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 $width: 1200px;
 
-$bp1:1400px;
+$bp1: 1400px;
 
 /*
 ТЕМА 1
-$mainBg:'../assets/img/background.jpg';
+$mainBg:'img/background.jpg';
 $color1:#2c3e50; //color
 $color2: #393939; //bg color
 $color3:yellow; //color \ btn-color
@@ -22,7 +27,7 @@ $color13:lightgray;*/
 /*
 ТЕМА 2
 
-$mainBg:'../assets/img/background-landing-2.jpg';
+$mainBg:'img/background-landing-2.jpg';
 $color1:#393939; //color
 $color2: #4a2626; //bg color
 $color3:yellow; //color \ btn-color
@@ -38,24 +43,23 @@ $color12:black; //number in slot
 $color13:lightgray;*/
 
 /*ТЕМА 3*/
-$mainBg:'../assets/img/background-landing.jpg';
-$color1:#393939; //color
+$mainBg: '/img/background-landing.jpg';
+$color1: #393939; //color
 $color2: #2c3e50; //bg color
-$color3:yellow; //color \ btn-color
-$color4:white; // color \ btn-color
-$color5:darkred; //color
-$color6:gray;
-$color7:#74b65f; //btn-random
-$color8:#5fa252; //btn-random line
-$color9:#d86a43; //btn-buy
-$color10:#393939af; //slot in lottery + opacity
-$color11:#50504f; //number in slot
-$color12:black; //number in slot
-$color13:lightgray;
-$color14:yellow; //partials block
-$color15:#2c3e50; //partials shadow color
-$color16:#2c3e50;//partials label color
-
+$color3: yellow; //color \ btn-color
+$color4: white; // color \ btn-color
+$color5: darkred; //color
+$color6: gray;
+$color7: #74b65f; //btn-random
+$color8: #5fa252; //btn-random line
+$color9: #d86a43; //btn-buy
+$color10: #393939af; //slot in lottery + opacity
+$color11: #50504f; //number in slot
+$color12: black; //number in slot
+$color13: lightgray;
+$color14: yellow; //partials block
+$color15: #2c3e50; //partials shadow color
+$color16: #2c3e50; //partials label color
 
 @mixin flex($horizontal:center, $vertical:center,$wrap:wrap) {
   display: flex;
@@ -64,15 +68,15 @@ $color16:#2c3e50;//partials label color
   flex-wrap: $wrap;
 }
 
-@mixin text($size:12px,$color:white,$weight:400,$align:center,$height:150%,$transform:none){
-  font-size:$size;
-  color:$color;
+@mixin text($size:12px,$color:white,$weight:400,$align:center,$height:150%,$transform:none) {
+  font-size: $size;
+  color: $color;
   font-weight: $weight;
   text-align: $align;
- // width: 100%;
+  // width: 100%;
   line-height: $height;
   text-transform: $transform;
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Open Sans', sans-serif;
 
 }
 
@@ -81,7 +85,7 @@ $color16:#2c3e50;//partials label color
   background-image: url($url);
   background-size: $size;
   background-position: $position;
-  background-attachment:$attachment
+  background-attachment: $attachment
 }
 
 @mixin psClass($left:unset,$top:unset,$right:unset,$bottom:unset,$width:unset,$height:unset,$index:0) {
@@ -89,9 +93,9 @@ $color16:#2c3e50;//partials label color
   width: $width;
   height: $height;
   bottom: $bottom;
-  top:$top;
-  left:$left;
-  right:$right;
+  top: $top;
+  left: $left;
+  right: $right;
   z-index: $index;
   position: absolute;
 
@@ -136,19 +140,18 @@ input {
     transform: rotate(-45deg);
   }
 
-
 }
 
 /* Scroll top button*/
 .scrollTop {
   position: fixed;
-  bottom:80px;
-  right:0px;
+  bottom: 80px;
+  right: 0px;
   background: red;
   opacity: 0.3;
   z-index: 100;
   padding: 20px;
-  color:white;
+  color: white;
   font-weight: 800;
   transition: .5s;
   cursor: pointer;
@@ -160,9 +163,9 @@ input {
 
 /* Scroll area*/
 .scroll-area {
-  height:100%;
+  height: 100%;
   width: 100%;
-  padding:100px 0px;
+  padding: 100px 0px;
   box-sizing: border-box;
 }
 
@@ -175,7 +178,7 @@ input {
 .vue-notification {
   padding: 20px;
   margin: 0 5px 5px;
-
+  z-index: 1200;
   font-size: 14px;
 
   color: #ffffff;
@@ -186,13 +189,13 @@ input {
   &.warn {
     background: #393939;
     border-left-color: yellow;
-    color:yellow;
+    color: yellow;
 
   }
 
   &.error {
     background: yellow;
-    color:#393939;
+    color: #393939;
     border-left-color: #393939;
 
   }
@@ -205,13 +208,22 @@ input {
 
 /* modal window*/
 .v--modal-overlay {
-  background: rgba(0, 0, 0, 0.97);
+  background: rgba(0, 0, 0, 0.999);
 
-  .v--modal {
-    background: transparent;
-    box-shadow: none;
+  .v--modal-background-click {
     @include flex(center, center);
+    .v--modal {
+      background: transparent;
+      box-shadow: none;
+      @include flex(center, center);
+
+      width: 100% !important;
+      left: 0px !important;
+      top: 0px !important;
+
+    }
   }
+
 }
 
 .v--modal-overlay.scrollable {
@@ -237,4 +249,65 @@ input {
 .ps__rail-y.ps--clicking .ps__thumb-y {
   background-color: yellow;
   width: 7px;
+}
+
+img[lazy=loading] {
+  width:50px !important;
+  height:50px !important;
+
+}
+img[lazy=error] {
+  width:50px !important;
+  height:50px !important;
+}
+
+
+.tabs-component {
+  width: 100%;
+
+  .tabs-component-tabs {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @media (max-width: 880px) {
+      & {
+        justify-content: center;
+      }
+    }
+
+    .tabs-component-tab {
+      padding: 10px;
+      border-bottom: 2px transparent solid;
+
+      &.is-active {
+        border-bottom: 2px $color3 solid;
+      }
+
+      .tabs-component-tab-a {
+        color: $color4;
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 12px;
+        text-transform: uppercase;
+        position: relative;
+
+      }
+
+      &.is-disabled {
+        .tabs-component-tab-a {
+          color: $color6;
+        }
+      }
+    }
+  }
+  .tabs-component-panels {
+    .tabs-component-panel {
+      .scroll-area {
+        padding: 20px 0px 100px 0px;
+      }
+
+    }
+  }
 }
