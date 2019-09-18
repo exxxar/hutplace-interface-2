@@ -1,20 +1,25 @@
+window.timeSolver = require('timesolver/timeSolver.min.js');
 
 import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VTooltip from 'v-tooltip'
 import VueLoading from 'vuejs-loading-plugin'
-
+import Notifications from 'vue-notification'
 import VueLazyload from "vue-lazyload";
+import VModal from 'vue-js-modal'
 
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  error: 'img/error.png',
-  loading: 'img/loading.gif',
+  error: '/static/img/error.png',
+  loading: '/static/img/loading.gif',
   attempt: 5,
   lazyComponent: true
 })
 
+
+Vue.use(VModal)
+Vue.use(Notifications)
 Vue.use(VTooltip)
 Vue.use(VueLoading, {
 
